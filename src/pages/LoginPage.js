@@ -1,4 +1,11 @@
+import StorageHelper from "../utils/storageHelper";
+import MainPage from "./MainPage";
+
 const LoginPage = () => {
+  if (StorageHelper.isLoggedIn()) {
+    window.history.replaceState({}, "", "/");
+    return MainPage();
+  }
   return `
   <main class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">

@@ -1,7 +1,7 @@
 import StorageHelper from "../utils/storageHelper";
 
 const setActiveClass = (currentUrl, targetUrl) => {
-  return currentUrl === targetUrl ? "text-blue-600" : "text-gray-600";
+  return currentUrl === targetUrl ? "text-blue-600 font-bold" : "text-gray-600";
 };
 
 const LoggedInMenu = (currentUrl) => {
