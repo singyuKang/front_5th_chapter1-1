@@ -13,7 +13,7 @@ const routePage = {
 function getCurPath() {
   const basePath = "/front_5th_chapter1-1";
   if (window.location.hash) {
-    console.log("🚀 ~ getCurPath ~ hash:", window.location.hash);
+    // console.log("🚀 ~ getCurPath ~ hash:", window.location.hash);
     // 해시 라우터
     return window.location.hash.slice(1) || "/";
   }
@@ -24,7 +24,7 @@ function getCurPath() {
 // 페이지 렌더링 함수
 export function renderPage() {
   const path = getCurPath();
-  console.log("🚀 ~ renderPage ~ path:", path);
+  // console.log("🚀 ~ renderPage ~ path:", path);
   const root = document.getElementById("root");
   const page = routePage[path] || ErrorPage;
   root.innerHTML = page();
