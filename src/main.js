@@ -10,9 +10,19 @@ const routePage = {
   "/profile": ProfilePage,
 };
 
+function getCurPath() {
+  if (window.location.hash) {
+    // console.log("🚀 ~ getCurPath ~ hash:", window.location.hash);
+    // 해시 라우터
+    return window.location.hash.slice(1) || "/";
+  }
+  // 브라우저 라우터
+  return window.location.pathname || "/";
+}
+
 // 페이지 렌더링 함수
 export function renderPage() {
-  const path = window.location.pathname;
+  const path = getCurPath();
   const root = document.getElementById("root");
   const page = routePage[path] || ErrorPage;
   root.innerHTML = page();
@@ -20,5 +30,8 @@ export function renderPage() {
 renderPage();
 window.onpopstate = renderPage;
 
-// /login 경로로 접근하면은 로그인 페이지가 렌더링 기존에는 안되었다는 소리
+// /login 경로로 접근하면은 로그인 페이지가 렌더링 기존에는 안되었다는 소리, popstate 이벤트 리스너
 window.addEventListener("popstate", renderPage);
+
+//hashRouter state 이벤트 리스너
+window.addEventListener("hashchange", renderPage);

@@ -1,6 +1,12 @@
 import { renderPage } from "../main";
 
 export function navigate(url) {
-  window.history.pushState({}, "", url); // URL 변경
-  renderPage(); // 새로고침 없이 페이지 렌더링
+  if (window.location.hash) {
+    // 해시 라우터
+    window.location.hash = url;
+  } else {
+    // 브라우저 라우터
+    window.history.pushState({}, "", url);
+    renderPage();
+  }
 }

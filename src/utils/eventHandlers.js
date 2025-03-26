@@ -23,7 +23,7 @@ document.addEventListener("submit", (e) => {
     const email = document.getElementById("email").value;
     const bio = document.getElementById("bio").value;
     StorageHelper.saveUserInfo({ username, email, bio });
-    // alert("프로필이 업데이트 되었습니다.");
+    alert("프로필이 업데이트 되었습니다.");
   }
 });
 
