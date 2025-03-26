@@ -11,13 +11,14 @@ const routePage = {
 };
 
 function getCurPath() {
+  const basePath = "/front_5th_chapter1-1";
   if (window.location.hash) {
     console.log("🚀 ~ getCurPath ~ hash:", window.location.hash);
     // 해시 라우터
     return window.location.hash.slice(1) || "/";
   }
   // 브라우저 라우터
-  return window.location.pathname || "/";
+  return window.location.pathname.replace(basePath, "") || "/";
 }
 
 // 페이지 렌더링 함수
