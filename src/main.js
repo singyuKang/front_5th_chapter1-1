@@ -23,6 +23,7 @@ function getCurPath() {
 // 페이지 렌더링 함수
 export function renderPage() {
   const path = getCurPath();
+  console.log("🚀 ~ renderPage ~ path:", path);
   const root = document.getElementById("root");
   const page = routePage[path] || ErrorPage;
   root.innerHTML = page();
