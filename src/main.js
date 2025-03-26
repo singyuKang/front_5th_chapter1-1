@@ -12,7 +12,7 @@ const routePage = {
 
 function getCurPath() {
   if (window.location.hash) {
-    // console.log("🚀 ~ getCurPath ~ hash:", window.location.hash);
+    console.log("🚀 ~ getCurPath ~ hash:", window.location.hash);
     // 해시 라우터
     return window.location.hash.slice(1) || "/";
   }
