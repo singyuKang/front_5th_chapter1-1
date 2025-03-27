@@ -1,4 +1,5 @@
 import { navigate } from "./navigation";
+import { renderPage } from "./renderer";
 import StorageHelper from "./storageHelper";
 
 document.addEventListener("submit", (e) => {
@@ -36,3 +37,7 @@ document.addEventListener("click", (e) => {
     navigate(e.target.getAttribute("href"));
   }
 });
+
+window.addEventListener("popstate", renderPage);
+window.addEventListener("hashchange", renderPage);
+window.onpopstate = renderPage;

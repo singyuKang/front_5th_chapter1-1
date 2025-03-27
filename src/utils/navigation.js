@@ -1,10 +1,8 @@
-import { renderPage } from "../main";
+import { renderPage } from "./renderer.js";
 
 export const BASE_URL =
   process.env.NODE_ENV === "production" ? "/front_5th_chapter1-1" : "";
 
-//  navigate("/"); ,
-// navigate(e.target.getAttribute("href"));
 export function navigate(url, replaceMode = false) {
   if (window.location.hash) {
     // 해시 라우터

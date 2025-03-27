@@ -3,7 +3,6 @@ const storageKey = {
 };
 
 class StorageHelper {
-  //new를 통해 불필요한 객체 생성없이(메모리 절약) Static Method를 사용하면은 바로 호출하여 메모리 절약이 가능하다.
   static saveUserInfo(user) {
     localStorage.setItem(storageKey.user, JSON.stringify(user));
   }
