@@ -5,7 +5,7 @@ import MainPage from "./MainPage";
 const LoginPage = () => {
   if (StorageHelper.isLoggedIn()) {
     // window.history.replaceState({}, "", "/");
-    navigate("/");
+    navigate("/", true);
     return MainPage();
     // return null;
   }

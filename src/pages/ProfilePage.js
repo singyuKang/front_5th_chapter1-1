@@ -7,7 +7,7 @@ const ProfilePage = () => {
   const user = StorageHelper.getUserInfo();
 
   if (!StorageHelper.isLoggedIn()) {
-    navigate("/login");
+    navigate("/login", true);
     return LoginPage();
   }
 
