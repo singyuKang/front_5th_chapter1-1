@@ -4,7 +4,7 @@ import MainPage from "./MainPage";
 
 const LoginPage = () => {
   if (StorageHelper.isLoggedIn()) {
-    const newUrl = BASE_URL + "/";
+    const newUrl = BASE_URL;
     window.history.replaceState({}, "", newUrl);
     return MainPage();
   }

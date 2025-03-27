@@ -7,7 +7,7 @@ const ProfilePage = () => {
   const user = StorageHelper.getUserInfo();
 
   if (!StorageHelper.isLoggedIn()) {
-    const newUrl = BASE_URL + "/login";
+    const newUrl = BASE_URL + "login";
     window.history.replaceState({}, "", newUrl);
     return LoginPage();
   }
