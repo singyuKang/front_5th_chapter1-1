@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+import { navigate } from "../utils/navigation";
 import StorageHelper from "../utils/storageHelper";
 import LoginPage from "./LoginPage";
 
@@ -6,7 +7,7 @@ const ProfilePage = () => {
   const user = StorageHelper.getUserInfo();
 
   if (!StorageHelper.isLoggedIn()) {
-    window.history.replaceState({}, "", "/login");
+    navigate("/login");
     return LoginPage();
   }
 
