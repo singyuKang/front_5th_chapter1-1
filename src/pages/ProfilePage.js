@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import { navigate } from "../utils/navigation";
+import { BASE_URL } from "../utils/navigation";
 import StorageHelper from "../utils/storageHelper";
 import LoginPage from "./LoginPage";
 
@@ -7,7 +7,8 @@ const ProfilePage = () => {
   const user = StorageHelper.getUserInfo();
 
   if (!StorageHelper.isLoggedIn()) {
-    navigate("/login", true);
+    const newUrl = BASE_URL + "/login";
+    window.history.replaceState({}, "", newUrl);
     return LoginPage();
   }
 

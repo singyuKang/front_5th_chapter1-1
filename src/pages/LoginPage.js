@@ -1,13 +1,12 @@
-import { navigate } from "../utils/navigation";
+import { BASE_URL } from "../utils/navigation";
 import StorageHelper from "../utils/storageHelper";
 import MainPage from "./MainPage";
 
 const LoginPage = () => {
   if (StorageHelper.isLoggedIn()) {
-    // window.history.replaceState({}, "", "/");
-    navigate("/", true);
+    const newUrl = BASE_URL + "/";
+    window.history.replaceState({}, "", newUrl);
     return MainPage();
-    // return null;
   }
   return `
   <main class="bg-gray-100 flex items-center justify-center min-h-screen">
