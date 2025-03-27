@@ -1,6 +1,7 @@
 import { renderPage } from "../main";
 
-export const BASE_URL = import.meta.env.BASE_URL || "/";
+export const BASE_URL =
+  process.env.NODE_ENV === "production" ? "/front_5th_chapter1-1" : "";
 
 export function navigate(url, replaceMode = false) {
   if (window.location.hash) {

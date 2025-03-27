@@ -4,10 +4,13 @@ import MainPage from "./pages/MainPage";
 import ProfilePage from "./pages/ProfilePage";
 import "./utils/eventHandlers.js";
 
+const BASE_URL =
+  process.env.NODE_ENV === "production" ? "/front_5th_chapter1-1" : "";
+
 const routePage = {
-  "/": MainPage,
-  "/login": LoginPage,
-  "/profile": ProfilePage,
+  [`${BASE_URL}/`]: MainPage,
+  [`${BASE_URL}/login`]: LoginPage,
+  [`${BASE_URL}/profile`]: ProfilePage,
 };
 
 function getCurPath() {
@@ -18,6 +21,11 @@ function getCurPath() {
     return window.location.hash.slice(1) || "/";
   }
   // 브라우저 라우터
+  console.log(
+    "🚀 ~ getCurPath ~ window.location.pathname:",
+    window.location.pathname.replace(basePath, "") || "/",
+  );
+
   return window.location.pathname.replace(basePath, "") || "/";
 }
 
